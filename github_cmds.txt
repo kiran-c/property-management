@@ -2,7 +2,7 @@ git hub token - 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  (expire in 30 days)
 
 git config --global user.name  "kiran-c"
 git config --global user.email "kittucs008@gmail.com"
-*************************************************s
+***********************************************************
 git init 
 git add . or git add *
 git btanch -M master
