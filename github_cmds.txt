@@ -1,0 +1,10 @@
+git hub token - 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  (expire in 30 days)
+
+git config --global user.name  "kiran-c"
+git config --global user.email "kittucs008@gmail.com"
+
+git init 
+git add . or git add *
+git btanch -M master
+git remote add origin https://github.com/kiran-c/my-ecommerce.git
+git hub remote repo connectiviity url = git remote set-url origin https://kiran-c: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@github.com/kiran-c/my-ecommerce.git
