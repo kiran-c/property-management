@@ -2,7 +2,6 @@ package com.mycompany.propertymanagement.controller;
 
 
 import com.mycompany.propertymanagement.dto.UserDTO;
-import com.mycompany.propertymanagement.entity.UserEntity;
 import com.mycompany.propertymanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,5 +26,12 @@ public class UserContoller {
         return new ResponseEntity<>(userDTO, HttpStatus.CREATED);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<UserDTO> login(@RequestBody UserDTO userDTO)
+    {
+        userDTO = userService.userLogin(userDTO.getEmail(), userDTO.getPassword());
+
+        return new ResponseEntity<>(userDTO, HttpStatus.CREATED);
+    }
 
 }
