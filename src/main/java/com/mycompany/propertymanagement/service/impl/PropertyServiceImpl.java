@@ -49,7 +49,7 @@ public class PropertyServiceImpl implements PropertyService {
            return dtoList;
 
         }
-        return;
+        return null;
     }
 
     @Override

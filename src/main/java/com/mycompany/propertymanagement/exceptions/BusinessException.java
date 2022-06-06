@@ -12,7 +12,7 @@ import java.util.List;
 public class BusinessException extends RuntimeException
 {
 
-    private List<ErrorModel> final errors;
+    private List<ErrorModel> errors;
 
     public BusinessException(List<ErrorModel> errors)
     {
