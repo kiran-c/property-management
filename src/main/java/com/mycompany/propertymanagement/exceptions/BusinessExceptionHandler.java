@@ -28,9 +28,9 @@ public class BusinessExceptionHandler {
 
         for(FieldError fe:fieldError)
         {
-            logger.info("Inside Field Validation: level - info  {} {}", fe.getField(), fe.getDefaultMessage());
+           // logger.info("Inside Field Validation: level - info  {} {}", fe.getField(), fe.getDefaultMessage());
             //logger.debug("Inside Field Validation: level - debug {} {}", fe.getField(), fe.getDefaultMessage());
-            logger.warning("Inside Field Validation: level - Warn  {} {}", fe.getField(), fe.getDefaultMessage());
+           // logger.warning("Inside Field Validation: level - Warn  {} {}", fe.getField(), fe.getDefaultMessage());
             //logger.error("Inside Field Validation: level - error  {} {}", fe.getField(), fe.getDefaultMessage());
             errModel = new ErrorModel();
 
@@ -52,9 +52,9 @@ public class BusinessExceptionHandler {
 
         for(ErrorModel errModel : be.getErrors())
         {
-            logger.info("Businees Exception is thrown : {} {}", errModel.getError(), errModel.getMessage() );
-            logger.warning("Businees Exception is thrown : {} {}", errModel.getError(), errModel.getMessage() );
-            logger.error("Businees Exception is thrown : {} {}", errModel.getError(), errModel.getMessage() );
+            //logger.info("Businees Exception is thrown : {} {}", errModel.getError(), errModel.getMessage() );
+            //logger.warning("Businees Exception is thrown : {} {}", errModel.getError(), errModel.getMessage() );
+            //logger.error("Business Exception is thrown : {} {}", errModel.getError(), errModel.getMessage() );
         }
 
 
