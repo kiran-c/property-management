@@ -4,7 +4,6 @@ package com.mycompany.propertymanagement.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 
@@ -24,11 +23,11 @@ public class PropertyEntity {
     private String title;
     @Column(name = "PROP_DESC")
     private String description;
-    private String name;
-    private String email;
     private Double price;
     private String address;
 
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID", nullable = false)
+    private UserEntity userEntity;
 
 }

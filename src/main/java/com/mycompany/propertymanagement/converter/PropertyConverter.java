@@ -7,12 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyConverter {
 
-    public PropertyEntity DTOtoEntityConverter(PropertyDTO propertyDTO)
+    public PropertyEntity convertDTOtoEntity(PropertyDTO propertyDTO)
     {
         PropertyEntity pe = new PropertyEntity();
-        pe.setName(propertyDTO.getName());
         pe.setTitle(propertyDTO.getTitle());
-        pe.setEmail(propertyDTO.getEmail());
         pe.setDescription(propertyDTO.getDescription());
         pe.setPrice(propertyDTO.getPrice());
 
@@ -20,12 +18,10 @@ public class PropertyConverter {
     }
 
 
-    public PropertyDTO entityToDTOConverter(PropertyEntity propertyEntity)
+    public PropertyDTO convertEntityToDTO(PropertyEntity propertyEntity)
     {
         PropertyDTO dto = new PropertyDTO();
-        dto.setName(propertyEntity.getName());
         dto.setTitle(propertyEntity.getTitle());
-        dto.setEmail(propertyEntity.getEmail());
         dto.setDescription(propertyEntity.getDescription());
         dto.setPrice(propertyEntity.getPrice());
 

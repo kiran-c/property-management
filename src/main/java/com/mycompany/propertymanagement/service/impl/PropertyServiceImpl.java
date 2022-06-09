@@ -1,6 +1,6 @@
 package com.mycompany.propertymanagement.service.impl;
 
-import com.mycompany.propertymanagement.controller.PropertyController;
+
 import com.mycompany.propertymanagement.converter.PropertyConverter;
 import com.mycompany.propertymanagement.dto.PropertyDTO;
 import com.mycompany.propertymanagement.entity.PropertyEntity;
@@ -24,11 +24,11 @@ public class PropertyServiceImpl implements PropertyService {
     @Override
     public PropertyDTO saveProperty(PropertyDTO propertyDTO)
     {
-       PropertyEntity pe = propertyConverter.entityToDTOConverter(propertyDTO);
+       PropertyEntity pe = propertyConverter.convertDTOtoEntity(propertyDTO);
 
        pe =  propertyRepository.save(pe);
 
-       propertyDTO = propertyConverter.entityToDTOConverter(pe);
+       propertyDTO = propertyConverter.convertEntityToDTO(pe);
 
         return propertyDTO;
     }
@@ -42,13 +42,14 @@ public class PropertyServiceImpl implements PropertyService {
 
         for (PropertyEntity property : propertyList)
         {
-           PropertyDTO dto =  propertyConverter.entityToDTOConverter(property);
+           PropertyDTO dto =  propertyConverter.convertEntityToDTO(property);
 
            dtoList.add(dto);
 
            return dtoList;
 
         }
+        return null;
     }
 
     @Override
@@ -62,13 +63,11 @@ public class PropertyServiceImpl implements PropertyService {
            PropertyEntity propertyEntity = optEnt.get();
 
 
-            propertyEntity.setName(propertyDTO.getName());
-            propertyEntity.setTitle(propertyDTO.getTitle());
-            propertyEntity.setEmail(propertyDTO.getEmail());
-            propertyEntity.setDescription(propertyDTO.getDescription());
-            propertyEntity.setPrice(propertyDTO.getPrice());
+              propertyEntity.setTitle(propertyDTO.getTitle());
+              propertyEntity.setDescription(propertyDTO.getDescription());
+              propertyEntity.setPrice(propertyDTO.getPrice());
 
-           dto =  propertyConverter.entityToDTOConverter(propertyEntity);
+           dto =  propertyConverter.convertEntityToDTO(propertyEntity);
 
 
             propertyRepository.save(propertyEntity);
@@ -91,7 +90,7 @@ public class PropertyServiceImpl implements PropertyService {
 
             entity.setDescription(propertyDTO.getDescription());
 
-           dto =  propertyConverter.entityToDTOConverter(entity);
+           dto =  propertyConverter.convertEntityToDTO(entity);
 
             propertyRepository.save(entity);
 
@@ -109,7 +108,6 @@ public class PropertyServiceImpl implements PropertyService {
 
         propertyRepository.deleteById(propertyId);
 
-        return null;
     }
 
 
