@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 public class CalculatorController {
 
     @GetMapping("/mul/{num3}")
-    public static Double multiply(@RequestParam("num1") Double num1 , @RequestParam("num2") Double num2, @PathVariable("num3") Double num3)
+    public  Double multiply(@RequestParam("num1") Double num1 , @RequestParam("num2") Double num2, @PathVariable("num3") Double num3)
     {
         return num1 * num2 * num3;
     }
 
     @GetMapping("/sub/{num1}/{num2}")
-    public Double substract(@PathVariable("num1") Double num1, @PathVariable("num2") Double num2, @RequestParam("num3") Double num3)
+    public Double substract(@PathVariable("num1") Double num1, @PathVariable("num2") Double num2)// @RequestParam("num3") Double num3)
     {
         if(num1 > num2)
             return num1 - num2;
